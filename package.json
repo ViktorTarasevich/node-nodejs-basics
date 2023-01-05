@@ -1,9 +1,10 @@
 {
-  "name": "node-nodejs-basics",
+  "name": "nodejs-basics",
   "version": "1.0.0",
   "description": "This repository is the part of nodejs-assignments https://github.com/AlreadyBored/nodejs-assignments",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
     "cli:args": "node src/cli/args.js --some-arg value1 --other 1337 --arg2 42",
     "cli:env": "npx cross-env SOME=any RSS_foo=bar RSS_bar=baz node src/cli/env.js",
     "cp": "node src/cp/cp.js",
@@ -36,5 +37,6 @@
   "bugs": {
     "url": "https://github.com/AlreadyBored/node-nodejs-basics/issues"
   },
-  "homepage": "https://github.com/AlreadyBored/node-nodejs-basics#readme"
+  "homepage": "https://github.com/AlreadyBored/node-nodejs-basics#readme",
+  "main": "app.js"
 }

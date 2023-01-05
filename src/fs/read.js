@@ -1,5 +1,6 @@
 import fs from 'fs'
-const read = async () => {
+import path from "path";
+export const read = async () => {
     // Write your code here
     const nameFile = 'fileToRead.txt'
     fs.access(`./src/fs/files/${nameFile}`, (err) => {

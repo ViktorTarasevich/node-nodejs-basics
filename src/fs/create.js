@@ -1,5 +1,6 @@
 import fs from 'fs'
-const create = async () => {
+
+export const create = async () => {
     // Write your code here
     const newFile = 'fresh.txt'
     fs.access(`./src/fs/files/fresh.txt`, (err) => {
@@ -19,3 +20,4 @@ const create = async () => {
 };
 
 await create();
+
