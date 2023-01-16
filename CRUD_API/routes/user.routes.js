@@ -7,6 +7,6 @@ router.get('/users/:userId', user.apiUserGet) //получаем пользов�
 
 router.post('/users', user.apiUserPost) //создаем пользователя
 
-router.put('users/:userId', user.apiUserPut) // обновить пользователя
+router.post('/users/:userId', user.apiUserPut) // обновить пользователя
 
 module.exports = router

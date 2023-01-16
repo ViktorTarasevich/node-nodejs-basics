@@ -11,24 +11,12 @@
 
 <p><input id="username" type="text">username
 <p><input id="age" type="text">age
-<p><input id="hobbies" type="text">hobbies
+<p><input id="hobbies" type="text" >hobbies
 <p><button id="sbmt">Create</button>
 
 </body>
 <script type="text/javascript">
     const getMethodPay = () => {
-        const form = document.querySelector("form");
-        const log = document.querySelector("#log");
-
-        /*form.addEventListener("submit", function(event) {
-            const data = new FormData(form);
-            let output = "";
-            for (const entry of data) {
-                output = entry[0] + "=" + entry[1] + "\r";
-            };
-            log.innerText = output;
-            event.preventDefault();
-        }, false);*/
         const username = document.getElementById("username").value;
         const age = document.getElementById('age').value;
         const hobbies = document.getElementById('hobbies').value;
@@ -44,16 +32,12 @@
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
         })
-            //document.location.href = 'subscription-payment'
             .then(res => res.json())
             .then(res => console.log(res))
     }
-
     document.getElementById("sbmt").addEventListener("click", getMethodPay);
-
 
 </script>
 </html>
