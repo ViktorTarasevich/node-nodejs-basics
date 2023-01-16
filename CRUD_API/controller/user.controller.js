@@ -18,17 +18,19 @@ class UserController {
         const {username, age, hobbies} = req.body
         console.log(username, age, hobbies)
         const userId = uuidv4()
-        const addedRecord = await repo.create({username, age, hobbies, userId})
-        console.log(`Added Record :${JSON.stringify(addedRecord, null, 4)}`)
-        res.status(200).send({message: "Information added to the " + "database successfully."})
+        const createUser = await repo.create({username, age, hobbies, userId})
+
+        if (createUser) {
+            res.status(200).send("Information added to the " + "database successfully.")
+        } else {
+            res.status(400).send({message: "Error "})
+        }
     }
     async apiUserPut (req, res, next) {
         const userId = req.params.userId
         const {data, username, age, hobbies} = req.body
-        console.log('aaaa', req.body)
+
         const record = await repo.update(userId, req.body)
-        console.log(`Record Updated : 
-    \n${JSON.stringify(record, null, 2)}`)
         res.send('Record Updated')
 
     }
