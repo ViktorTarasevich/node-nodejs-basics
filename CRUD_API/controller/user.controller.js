@@ -31,6 +31,8 @@ class UserController {
         const {data, username, age, hobbies} = req.body
 
         const record = await repo.update(userId, req.body)
+        console.log(`Record Updated : 
+    \n${JSON.stringify(record, null, 2)}`)
         res.send('Record Updated')
 
     }
